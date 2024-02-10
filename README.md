@@ -15,9 +15,9 @@ RES is a simple symmetric key encryption algorithm designed to encrypt using ran
 - [License](#license)
 
 ## Installation
-This algorithm uses no requirements and can be installed by simply cloning the repo.
+This code is available on PyPI under the name `REScrypt`:
 ```bash
-git clone https://github.com/harbingeroffire/RES.git
+pip install REScrypt
 ```
 
 ## USAGE
@@ -25,17 +25,13 @@ Example For encrypting and decrypting using RES:
 ```python
 import RES
 
-#Example for RES-128
-key=b"key"
-cipher=RES.Cipher("RES-128", key)
+cipher=RES.Cipher("RES-128", b"key")
 
-#encrypt
 ciphertext=cipher.encrypt(b"buffer")
-print("Encrypted Text: ", ciphertext)
-
-#decrypt
 plaintext=cipher.decrypt(ciphertext)
-print("Decrypted Text: ", plaintext)
+
+print("Encrypted: ",ciphertext)
+print("Decrypted: ",plaintext)
 ```
 
 ## Other Notes
